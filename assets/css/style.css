@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+main {
+  padding: 3em 0;
+}
+main article {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em 0;
+  width: 25%;
+  height: 15em;
+  font-size: 1.3em;
+}
+main .card p {
+  padding: 1em 0;
+  word-break: break-word;
+}
+main #modal {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  animation: modalPop 1s;
+}
+main #modal.modalHidden {
+  display: none;
+}
+main #modal#modal.modalShow {
+  display: block;
+}
+@keyframes modalPop {
+  from {
+    top: -50%;
+  }
+}
+main #modalContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333333;
+  color: white;
+  padding: 3em;
+}
+main #modalContent p {
+  word-break: break-word;
+}
+main #modalContent #closeButton {
+  cursor: pointer;
+}
+main #modalContent #closeButton::before, main #modalContent #closeButton::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  top: 9%;
+  left: 95%;
+  background-color: red;
+}
+main #modalContent #closeButton::before {
+  transform: rotate(-45deg);
+}
+main #modalContent #closeButton::after {
+  transform: rotate(45deg);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,81 @@
+main {
+    padding: 3em 0;
+
+    article {
+        @include flex(space-around);
+        flex-wrap: wrap;
+      }
+      
+      .card {
+        @include flex(space-between,column);
+        border: 1px solid black;
+        padding: 1em;
+        margin: 1em 0;
+        width: 25%;
+        height: 15em;
+        font-size: 1.3em;
+    
+            p {
+                padding: 1em 0;
+                word-break: break-word;
+            }
+      }
+    
+    
+    
+    #modal {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        animation: modalPop 1s;
+    
+        &.modalHidden {
+            display: none;
+        }
+    
+        &#modal.modalShow {
+            display: block;
+        }
+    }
+    
+    @keyframes modalPop {
+        from {
+            top: -50%;
+        }
+    }
+
+    #modalContent {
+        position: relative;
+        @include flex($direction : column);
+        background-color: rgb(51, 51, 51);
+        color: white;
+        padding: 3em;
+    
+        p {
+            word-break: break-word;
+        }
+    
+        #closeButton {    
+            cursor: pointer;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                top: 9%;
+                left: 95%;
+                background-color: red;
+            }
+    
+            &::before {
+                transform: rotate(-45deg);
+            }
+    
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
